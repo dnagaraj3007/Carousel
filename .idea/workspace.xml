@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="18dc5a98-1023-4412-ac18-7bd2e341ed8d" name="Default Changelist" comment="" />
+    <list default="true" id="18dc5a98-1023-4412-ac18-7bd2e341ed8d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/images/7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/9.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/carousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +29,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1mnJj9zjJmNkQ7iOQi1Y3mD8YDu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -24,6 +43,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -49,11 +69,22 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1610123553749</updated>
-      <workItem from="1610123554884" duration="15094000" />
+      <workItem from="1610123554884" duration="25941000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
