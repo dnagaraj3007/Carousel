@@ -1,6 +1,6 @@
 let counter = 0;
 let maxProducts = products.length;
-
+let activeindex=1;
 
 document.addEventListener("DOMContentLoaded",function(){
     addProducts(products,"");
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded",function(){
     addCategoryListener();
 });
 
-function addItemCategories(products){
+const addItemCategories=(products)=>{
     const categoryField = document.querySelector("#categories");
     const categories =  [...new Set(products.map(product => product.category))];
     const option = document.createElement('option');
@@ -24,39 +24,50 @@ function addItemCategories(products){
     })
 }
 
-function addCategoryListener(){
+const addCategoryListener= ()=> {
     const categoryField = document.querySelector("#categories");
     categoryField.addEventListener('change', function(){
+        const carouselContainer  = document.querySelector(".carousel_container");
+        carouselContainer.style.transform = 'translateX(0px)';
         changeDisplayType(products, categoryField.value);
     })
 }
 
-function changeDisplayType(products, filter){
+const changeDisplayType=(products, filter)=>{
     maxProducts=0;
     counter = 0;
     const cards = document.querySelector(".carousel_container").children;
     for(let i=0;i<products.length; i++){
-        if(products[i].category===filter){
+        if(filter===""){
             cards[i].style.display= "inline"
             maxProducts++;
         }else{
-            cards[i].style.display= "none";
+            if(products[i].category===filter){
+                cards[i].style.display= "inline"
+                maxProducts++;
+            }else{
+                cards[i].style.display= "none";
+            }
         }
+
     }
 
 }
 
-function addProducts(products, filter) {
-    products.forEach((product) => {
-            createCellAndAddImg(product);
+const addProducts=(products) =>{
+    products.forEach((product, index) => {
+            createCellAndAddImg(product, index);
         //createCellIndicator();
     })
 }
 
-function createCellAndAddImg(product, displayType){
+const createCellAndAddImg=(product, index)=>{
     let carouselList = document.getElementById("container");
     let card = document.createElement("div");
     card.className="carousel_card";
+    if(activeindex == index){
+        card.classList.add("active_carousel");
+    }
 
     let image = document.createElement("img");
     image.src = product.src;
@@ -69,8 +80,6 @@ function createCellAndAddImg(product, displayType){
     itemName.className="carousel_card_item_name";
     itemName.textContent=product.name;
 
-    let breakLine = document.createElement("br");
-
     let itemPrice = document.createElement("h5");
     itemPrice.className = "carousel_card_item_price";
     itemPrice.textContent = "Price: "+product.price
@@ -80,9 +89,7 @@ function createCellAndAddImg(product, displayType){
     itemCategory.textContent = "Category: "+product.category;
 
     details.appendChild(itemName);
-    details.appendChild(breakLine);
     details.appendChild(itemPrice);
-    details.appendChild(breakLine);
     details.appendChild(itemCategory);
 
     card.appendChild(image);
@@ -97,33 +104,46 @@ function createCellAndAddImg(product, displayType){
     carouselNav.appendChild(button);
 }*/
 
-function addButtonListeners(){
+const addButtonListeners=()=>{
     const carouselContainer  = document.querySelector(".carousel_container")
-    const image = document.querySelector(".carousel_card")
+    let allCards = carouselContainer.children;
+    const card = document.querySelector(".carousel_card")
     const prevBtn = document.querySelector("#prevBtn");
     const nextBtn = document.querySelector("#nextBtn");
     let size;
     nextBtn.addEventListener('click', ()=>{
-       size = image.clientWidth;
-        carouselContainer.style.transition = "transform 0.4s ease-in-out"
-        counter++;
-        carouselContainer.style.transform = 'translateX('+(-size*counter)+'px)'
-        console.log(carouselContainer.style.transform);
-    })
-    prevBtn.addEventListener('click', ()=>{
-        size = image.clientWidth;
-        if(counter ===0){
-            counter= maxProducts-2;
-        }
-
+        if(maxProducts>3) {
+            size = card.clientWidth;
             carouselContainer.style.transition = "transform 0.4s ease-in-out"
-            counter--;
+            counter++;
+            allCards[counter].classList.remove('active_carousel')
+            allCards[counter + 1].classList.add('active_carousel')
             carouselContainer.style.transform = 'translateX(' + (-size * counter) + 'px)'
             console.log(carouselContainer.style.transform);
+        }
+    })
+    prevBtn.addEventListener('click', ()=>{
+        if(maxProducts>3) {
+            size = card.clientWidth;
+            if (counter === 0) {
+                counter = maxProducts - 2;
+                allCards[1].classList.remove('active_carousel')
+            }
+
+            carouselContainer.style.transition = "transform 0.4s ease-in-out";
+            allCards[counter].classList.add('active_carousel')
+            allCards[counter + 1].classList.remove('active_carousel')
+            counter--;
+
+            carouselContainer.style.transform = 'translateX(' + (-size * counter) + 'px)'
+            console.log(carouselContainer.style.transform);
+        }
     })
     carouselContainer.addEventListener('transitionend', ()=>{
             if (counter === maxProducts - 2) {
                 counter = 0;
+                allCards[1].classList.add('active_carousel')
+                allCards[products.length-1].classList.remove('active_carousel')
                 carouselContainer.style.transform = 'translateX(' + (-size * counter) + 'px)'
             }
 
