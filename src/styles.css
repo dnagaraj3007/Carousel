@@ -1,0 +1,36 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.carousel{
+    position:relative;
+}
+.carousel_container{
+    display: flex;
+    width:60%;
+    height: 500px;
+    margin:auto;
+}
+
+.carousel_image{
+    width: 33.3%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.carousel_button{
+    position: absolute;
+    width:30px;
+    height:30px;
+    top: 50%;
+}
+.carousel_button_right{
+    right: 16%;
+}
+.carousel_button_left{
+    right: 80%;
+}
+
+
+
