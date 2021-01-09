@@ -2,6 +2,25 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    font-family: cursive;
+}
+.item_category{
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: #444;
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: .5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
 }
 
 .carousel{
@@ -37,7 +56,6 @@
     left: 12.5%;
 }
 .carousel_card {
-    /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     width: 33.33%;
@@ -47,11 +65,9 @@
 }
 .carousel_card_item_name{
     text-align: center;
-    font-family: cursive;
 }
 .carousel_card_item_price, .carousel_card_item_category{
     text-align: center;
-    font-family: cursive;
 }
 
 

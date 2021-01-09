@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Carousel</title>
-
-    <link rel="stylesheet" href="styles.css"></link>
+    <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
+
     <div class="carousel">
         <div class="carousel_container" id="container">
         </div>
@@ -17,6 +17,10 @@
     <button class = "carousel_button carousel_button_right" id="nextBtn">
         <img src="images/right.svg">
     </button>
+    <div>
+        <label for="categories"><h3>Choose a Category:</h3></label>
+        <select name="categories" id="categories" class="item_category"></select>
+    </div>
     <script src="products.js"></script>
     <script src="carousel.js"></script>
 </body>
