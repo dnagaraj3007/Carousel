@@ -5,7 +5,6 @@ const mapProducts={}
 products.map((product, index)=>{
  mapProducts[index] =true
 })
-console.log(mapProducts);
 
 document.addEventListener("DOMContentLoaded",function(){
     addProducts(products,"");
@@ -76,7 +75,7 @@ const setActiveIndex= (fromIndex, mapProducts)=>{
         if(mapProducts[i]){
             count++;
         }
-        if(count==2){
+        if(count===2){
             return i;
         }
     }
@@ -93,7 +92,7 @@ const createCellAndAddImg=(product, index)=>{
     let carouselList = document.getElementById("container");
     let card = document.createElement("div");
     card.className="carousel_card";
-    if(activeindex == index){
+    if(activeindex === index){
         card.classList.add("active_carousel");
     }
 
@@ -147,7 +146,6 @@ const addButtonListeners=()=>{
             allCards[counter].classList.remove('active_carousel')
             allCards[counter + 1].classList.add('active_carousel')
             carouselContainer.style.transform = 'translateX(' + (-size * counter) + 'px)'
-            console.log(carouselContainer.style.transform);
         }
     })
     prevBtn.addEventListener('click', ()=>{
@@ -164,7 +162,6 @@ const addButtonListeners=()=>{
             counter--;
 
             carouselContainer.style.transform = 'translateX(' + (-size * counter) + 'px)'
-            console.log(carouselContainer.style.transform);
         }
     })
     carouselContainer.addEventListener('transitionend', ()=>{
