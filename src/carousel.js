@@ -1,6 +1,11 @@
 let counter = 0;
 let maxProducts = products.length;
 let activeindex=1;
+const mapProducts={}
+products.map((product, index)=>{
+ mapProducts[index] =true
+})
+console.log(mapProducts);
 
 document.addEventListener("DOMContentLoaded",function(){
     addProducts(products,"");
@@ -39,19 +44,42 @@ const changeDisplayType=(products, filter)=>{
     const cards = document.querySelector(".carousel_container").children;
     for(let i=0;i<products.length; i++){
         if(filter===""){
+            mapProducts[i] =true;
             cards[i].style.display= "inline"
             maxProducts++;
         }else{
             if(products[i].category===filter){
+                mapProducts[i] =true;
                 cards[i].style.display= "inline"
                 maxProducts++;
             }else{
+                mapProducts[i]=false;
                 cards[i].style.display= "none";
             }
         }
 
     }
+    let activeIndex = setActiveIndex(0, mapProducts);
+    for(let i=0; i<products.length;i++){
+        if(i===activeIndex){
+            cards[i].classList.add('active_carousel');
+        }else{
+            cards[i].classList.remove('active_carousel');
+        }
+    }
 
+}
+
+const setActiveIndex= (fromIndex, mapProducts)=>{
+    let count =0;
+    for(let i=fromIndex; i< products.length;i++){
+        if(mapProducts[i]){
+            count++;
+        }
+        if(count==2){
+            return i;
+        }
+    }
 }
 
 const addProducts=(products) =>{
